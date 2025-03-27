@@ -25,7 +25,7 @@ export default function RootLayout({
         <main className="flex-grow overflow-hidden pt-0 md:pt-[10vh]">{children}</main>
 
         {/* Footer */}
-        <footer className="hidden md:block fixed bottom-0 left-0 w-full 
+        <footer className="hidden lg:block fixed bottom-0 left-0 w-full 
                   text-white-300 text-left text-xs pl-8 pb-3 z-20 
                    ">
           © 2024 My Portfolio | Built with Next.js & TailwindCSS
