@@ -7,10 +7,12 @@ import NavLink from "./NavLink";
 
 export default function Header() {
   return (
-    <header className="fixed bottom-0 lg:top-0 left-0 w-full 
-    bg-gradient-to-t sm:bg-gradient-to-b 
-    from-black/95 via-black/40 via-black/20 via-transparent to-transparent z-50">  
-      <nav className="container mx-auto flex flex-col lg:flex-row lg:justify-between items-center py-3 px-6 mb-6 sm:mb-0">
+    <header className="fixed left-0 w-full z-20 h-[10%] min-h-[60px]
+        backdrop-blur-xs md:backdrop-blur-xs 
+        bg-gradient-to-t md:bg-gradient-to-b 
+        from-black/90 via-black/50 via-black/30 via-transparent to-transparent
+        bottom-0 md:top-0 md:bottom-auto pointer-events-none">
+      <nav className="container mx-auto flex flex-col lg:flex-row lg:justify-between items-center py-3 px-6 pointer-events-auto">
 
         {/* Logo */}
         <Link href="/" className="hidden lg:block text-white text-xl font-bold">
@@ -37,6 +39,7 @@ export default function Header() {
             <FaGithub />
           </a>
         </div>
+
       </nav>
     </header>
   );

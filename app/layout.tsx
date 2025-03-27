@@ -1,18 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./ui/components/Header";
 import MouseEffect from "./ui/components/MouseEffect";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { poppins, roboto_mono } from "./fonts";
 
 export const metadata: Metadata = {
   title: "My Portfolio",
@@ -26,16 +16,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100 text-gray-900`}>
+      <body className={`${poppins.className} ${roboto_mono.className} antialiased bg-gray-100 text-gray-900 flex flex-col max-h-screen`}>
         {/* Header */}
-        <MouseEffect/>
+        <MouseEffect />
         <Header></Header>
 
         {/* Main Content */}
-        <main className="container mx-auto p-5 pt-20">{children}</main>
+        <main className="flex-grow overflow-hidden pt-0 md:pt-[10vh]">{children}</main>
 
         {/* Footer */}
-        <footer className="bg-gray-900 text-white text-center p-5 mt-10">
+        <footer className="hidden md:block fixed bottom-0 left-0 w-full 
+                  text-white-300 text-left text-xs pl-8 pb-3 z-20 
+                   ">
           © 2024 My Portfolio | Built with Next.js & TailwindCSS
         </footer>
       </body>
