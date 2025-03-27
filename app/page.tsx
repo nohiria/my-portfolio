@@ -42,7 +42,7 @@ export default function Home() {
           "
         >
           Hello There! <br />
-          I'm <span className="text-white">Nohiria Velazquez</span>
+          <p>It&apos;s my portfolio</p> <span className="text-white">Nohiria Velazquez</span>
         </motion.h1>
 
           <motion.p
