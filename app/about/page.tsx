@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { sections } from "@/data";
@@ -11,6 +11,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const setRef = useCallback((el: HTMLDivElement | null, index: number) => {
+    if (el) {
+      sectionRefs.current[index] = el;
+    }
+  }, []);
 
   useEffect(() => {
     sectionRefs.current.forEach((section, index) => {
@@ -27,8 +33,8 @@ export default function About() {
               trigger: section,
               start: "top 80%",
               end: "bottom 60%",
-              toggleActions: "play none none reverse"
-            }
+              toggleActions: "play none none reverse",
+            },
           }
         );
       }
@@ -57,7 +63,7 @@ export default function About() {
                   className="flex items-center gap-2 text-gray-300 hover:text-primary transition duration-300"
                   aria-label={`Go to ${section.label}`}
                 >
-                  <LiaMinusSolid/>{section.label}
+                  <LiaMinusSolid />{section.label}
                 </a>
               </li>
             ))}
@@ -70,14 +76,13 @@ export default function About() {
             <section
               id={section.id}
               key={section.id}
-              ref={(el) => (sectionRefs.current[index] = el)}
+              ref={(el) => setRef(el, index)}
               className="mb-16 w-full"
               tabIndex={0}
             >
               {section.id === "intro" ? (
-                <IntroCard /> // Usamos el componente aquí
+                <IntroCard />
               ) : (
-                // Otras secciones normales
                 <>
                   <h2 className="text-3xl font-bold text-primary mb-4">
                     {section.label}
