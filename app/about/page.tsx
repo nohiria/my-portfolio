@@ -10,7 +10,11 @@ import { LiaMinusSolid } from "react-icons/lia";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
-  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const sectionRefs = useRef<Array<HTMLDivElement | null>>([]);
+
+  const setRef = (index: number) => (el: HTMLDivElement | null) => {
+    sectionRefs.current[index] = el;
+  };
 
   useEffect(() => {
     sectionRefs.current.forEach((section, index) => {
@@ -70,7 +74,7 @@ export default function About() {
             <section
               id={section.id}
               key={section.id}
-              ref={(el) => (sectionRefs.current[index] = el)}
+              ref={setRef(index)}
               className="mb-16 w-full"
               tabIndex={0}
             >
