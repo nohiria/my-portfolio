@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { sections } from "@/data";
@@ -11,12 +11,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  const setRef = useCallback((el: HTMLElement | null, index: number) => {
-    if (el) {
-      sectionRefs.current[index] = el as HTMLDivElement;
-    }
-  }, []);
 
   useEffect(() => {
     sectionRefs.current.forEach((section, index) => {
@@ -76,7 +70,7 @@ export default function About() {
             <section
               id={section.id}
               key={section.id}
-              ref={(el) => setRef(el, index)}
+              ref={(el) => (sectionRefs.current[index] = el)}
               className="mb-16 w-full"
               tabIndex={0}
             >
