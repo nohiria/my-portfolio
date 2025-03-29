@@ -22,7 +22,7 @@ body {
   position: fixed;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(0, 255, 255, 0.234) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.3) 0%, transparent 80%);
   top: var(--mouse-y, 50%);
   left: var(--mouse-x, 50%);
   transform: translate(-50%, -50%);

@@ -4,12 +4,12 @@ export const roboto_mono= Roboto_Mono({
   subsets: ['latin'],
   weight: ["400", "700"],
   display: 'swap',
-  variable: '--font-roboto-mono'
+  variable: '--font-roboto'
 });
 
 export const poppins = Poppins({
   subsets: ['latin'],
-  weight: ["400", "700"],
+  weight: ["300","400", "700"],
   display: 'swap',
   variable: '--font-poppins'
 });

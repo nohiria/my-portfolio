@@ -29,14 +29,14 @@ export default function Home() {
 
       {/* Left Section */}
       <div className="w-full lg:w-1/2 flex flex-col justify-between px-8 md:px-16 py-10 relative h-[30vh]">
-        <div className="text-center lg:text-left pl-0 xl:pl-20 pt-0 xl:pt-20">
+        <div className="text-center lg:text-left pl-0 xl:pl-30 pt-0 xl:pt-20">
         <motion.h1
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1 }}
           className="
             font-bold text-teal-200 text-center xl:whitespace-nowrap
-            text-4xl md:text-[clamp(2.5rem,4vw,5rem)] 
+            text-3xl md:text-[clamp(2.5rem,4vw,5rem)] 
             [@media_(min-aspect-ratio:1/1)]:text-left 
             [@media_(min-aspect-ratio:3/2)]:text-[clamp(2.5rem,4vw,5rem)]
           "
