@@ -12,9 +12,9 @@ gsap.registerPlugin(ScrollTrigger);
 export default function About() {
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  const setRef = useCallback((el: HTMLDivElement | null, index: number) => {
+  const setRef = useCallback((el: HTMLElement | null, index: number) => {
     if (el) {
-      sectionRefs.current[index] = el;
+      sectionRefs.current[index] = el as HTMLDivElement;
     }
   }, []);
 
@@ -53,7 +53,7 @@ export default function About() {
     <main className="min-h-screen bg-dark text-white flex flex-col items-center py-20 px-6">
       <div className="w-full max-w-2xl xl:max-w-3xl 2xl:max-w-4xl grid grid-cols-1 mx-auto">
         
-        {/* Menú lateral (visible solo en pantallas grandes) */}
+        {/* Menú lateral */}
         <nav className="hidden xl:block fixed left-10 top-2/5">
           <ul className="space-y-4">
             {sections.map((section) => (
@@ -70,7 +70,7 @@ export default function About() {
           </ul>
         </nav>
 
-        {/* Contenido con animación */}
+        {/* Contenido */}
         <div className="w-full mx-auto">
           {sections.map((section, index) => (
             <section
