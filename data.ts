@@ -1,7 +1,7 @@
 // data.ts
 export const sections = [
     { id: "intro", label: "Introduction" },
-    { id: "experience", label: "Work Experience" },
+    { id: "about", label: "Work Experience" },
     { id: "studies", label: "Studies" },
     { id: "skills", label: "Technical Skills" }
   ];

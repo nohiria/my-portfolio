@@ -6,7 +6,7 @@ import { roboto_mono } from "./fonts";
 
 export default function Home() {
   return (
-    <div className="relative flex flex-col lg:flex-row h-screen overflow-hidden">
+    <div className="relative flex flex-col lg:flex-row h-screen overflow-hidden max-h-[100vh] md:pt-10 bottom-0">
 
       {/* Overlay Image */}
       <motion.img
@@ -17,11 +17,8 @@ export default function Home() {
           left-1/2 -translate-x-1/2  
           md:left-1/2 md:-translate-x-1/2 
           lg:left-auto lg:right-0 lg:translate-x-0  
-          h-[55vh] sm:h-[60vh] md:h-[70vh] lg:h-[90vh] 
-          lg:max-w-[100vw] max-w-none object-contain -z-20 
-          [@media_(min-aspect-ratio:1/1)]:left-auto 
-          [@media_(min-aspect-ratio:1/1)]:right-0 
-          [@media_(min-aspect-ratio:1/1)]:translate-x-0"
+          h-[55vh] sm:h-[60vh] md:h-[70vh] lg:h-[90vh]
+          lg:max-h-[70vh] xl:max-h-[85vh] max-w-none object-contain -z-20"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}

@@ -7,7 +7,7 @@ import NavLink from "./NavLink";
 
 export default function Header() {
   return (
-    <header className="fixed left-0 w-full z-20 h-[10%] min-h-[60px]
+    <header className="fixed left-0 w-full z-20 h-[10%] min-h-[60px] max-h-[80px]
         backdrop-blur-xs md:backdrop-blur-xs 
         bg-gradient-to-t md:bg-gradient-to-b 
         from-black/90 via-black/50 via-black/30 via-transparent to-transparent

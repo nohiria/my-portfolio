@@ -16,13 +16,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} ${roboto_mono.className} antialiased bg-gray-100 text-gray-900 flex flex-col max-h-screen`}>
+      <body className={`${poppins.className} ${roboto_mono.className} antialiased bg-gray-100 text-gray-900 flex flex-col min-h-screen`}>
         {/* Header */}
         <MouseEffect />
         <Header></Header>
 
         {/* Main Content */}
-        <main className="flex-grow overflow-hidden pt-0 md:pt-[10vh]">{children}</main>
+        <main className="flex-grow pt-0">{children}</main>
 
         {/* Footer */}
         <footer className="hidden lg:block fixed bottom-0 left-0 w-full 
