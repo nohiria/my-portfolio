@@ -2,7 +2,7 @@
 
 import { sections } from "@/data";
 import IntroCard from "../ui/components/About/IntroCard";
-import { LiaMinusSolid } from "react-icons/lia";
+import {LiaPlaySolid } from "react-icons/lia";
 import { motion } from "framer-motion";
 
 export default function About() {
@@ -15,10 +15,10 @@ export default function About() {
             <a
               key={section.id}
               href={`#${section.id}`}
-              className="flex items-center gap-2 text-gray-300 hover:text-primary transition duration-300"
+              className="flex items-center gap-2 text-gray-300 hover:text-white transition duration-300 hover:translate-x-[5px]"
               aria-label={`Go to ${section.label}`}
             >
-              <LiaMinusSolid /> {section.label}
+              <LiaPlaySolid /> {section.label}
             </a>
           ))}
         </nav>
