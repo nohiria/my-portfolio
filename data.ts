@@ -93,104 +93,104 @@ export const sections: Section[] = [
         "content": [
             {
                 "name": "Laravel",
-                "image": "/images/laravel-logo.png",
+                "icon": "FaLaravel",
                 "links": ["https://laravel.com/"]
             },
             {
                 "name": "PHP",
-                "image": "/images/php-logo.png",
+                "icon": "FaPhp",
                 "links": ["https://www.php.net/"]
             },
             {
                 "name": "Java",
-                "image": "/images/java-logo.png",
+                "icon": "FaJava",
                 "links": ["https://www.java.com/"]
             },
             {
-                "name": "Spring Boot",
-                "image": "/images/springboot-logo.png",
+                "name": "SpringBoot",
+                "icon": "SiSpringboot",
                 "links": ["https://spring.io/projects/spring-boot"]
             },
             {
-                "name": "Spring MVC",
-                "image": "/images/springmvc-logo.png",
+                "name": "SpringMVC",
+                "icon": "SiSpring",
                 "links": ["https://spring.io/projects/spring-framework"]
             },
             {
                 "name": "Maven",
-                "image": "/images/maven-logo.png",
+                "icon": "SiApachemaven",
                 "links": ["https://maven.apache.org/"]
             },
             {
                 "name": "MySQL",
-                "image": "/images/mysql-logo.png",
+                "icon": "SiMysql",
                 "links": ["https://www.mysql.com/"]
             },
             {
                 "name": "SQL",
-                "image": "/images/sql-logo.png",
+                "icon": "SiPostgresql",
                 "links": ["https://www.w3schools.com/sql/"]
             },
             {
                 "name": "OLAP",
-                "image": "/images/olap-logo.png",
+                "icon": "SiGoogleanalytics",
                 "links": ["https://en.wikipedia.org/wiki/Online_analytical_processing"]
             },
             {
                 "name": "OLTP",
-                "image": "/images/oltp-logo.png",
+                "icon": "SiGooglecloud",
                 "links": ["https://en.wikipedia.org/wiki/Online_transaction_processing"]
             },
             {
                 "name": "Bootstrap",
-                "image": "/images/bootstrap-logo.png",
+                "icon": "SiBootstrap",
                 "links": ["https://getbootstrap.com/"]
             },
             {
                 "name": "HTML5",
-                "image": "/images/html5-logo.png",
+                "icon": "FaHtml5",
                 "links": ["https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5"]
             },
             {
                 "name": "CSS3",
-                "image": "/images/css3-logo.png",
+                "icon": "FaCss3",
                 "links": ["https://developer.mozilla.org/en-US/docs/Web/CSS"]
             },
             {
                 "name": "JavaScript",
-                "image": "/images/javascript-logo.png",
+                "icon": "SiJavascript",
                 "links": ["https://developer.mozilla.org/en-US/docs/Web/JavaScript"]
             },
             {
-                "name": "Ciberseguridad",
-                "image": "/images/cybersecurity-logo.png",
+                "name": "Cybersecurity",
+                "icon": "FaShieldAlt",
                 "links": ["https://www.cisa.gov/cybersecurity"]
             },
             {
-                "name": "Administración de amenazas",
-                "image": "/images/threat-management-logo.png",
+                "name": "Threat Management",
+                "icon": "FaExclamationTriangle",
                 "links": ["https://en.wikipedia.org/wiki/Threat_management"]
             },
             {
-                "name": "Defensa de redes",
-                "image": "/images/network-security-logo.png",
+                "name": "Network Defense",
+                "icon": "FaNetworkWired",
                 "links": ["https://en.wikipedia.org/wiki/Network_security"]
             },
             {
-                "name": "Seguridad de terminales",
-                "image": "/images/endpoint-security-logo.png",
+                "name": "Endpoint Security",
+                "icon": "FaDesktop",
                 "links": ["https://en.wikipedia.org/wiki/Endpoint_security"]
             },
             {
                 "name": "Git",
-                "image": "/images/git-logo.png",
+                "icon": "FaGitAlt",
                 "links": ["https://git-scm.com/"]
             },
             {
-                "name": "Pruebas Unitarias",
-                "image": "/images/unit-testing-logo.png",
+                "name": "Unit Testing",
+                "icon": "SiTestinglibrary",
                 "links": ["https://en.wikipedia.org/wiki/Unit_testing"]
             }
         ]
-    }        
+    }
 ];

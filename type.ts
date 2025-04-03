@@ -17,7 +17,7 @@ export interface WorkExperience {
   
   export interface Skill {
     name: string;
-    image?: string;
+    icon?: string;
     links?: string[];
   }
   
