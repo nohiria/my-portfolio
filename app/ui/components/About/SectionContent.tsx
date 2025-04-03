@@ -9,18 +9,18 @@ interface SectionContentProps {
   section: Section;
 }
 
-// Función para obtener el icono dinámicamente
-const getIconComponent = (iconName: string) => {
+// Function to dynamically get the corresponding icon
+const getIconComponent = (iconName: keyof typeof FaIcons | keyof typeof SiIcons | keyof typeof GrIcons) => {
   return (
-    FaIcons[iconName] || 
-    SiIcons[iconName] || 
-    GrIcons[iconName] || 
-    FaIcons.FaDatabase // Icono por defecto si no se encuentra
+    FaIcons[iconName as keyof typeof FaIcons] ||
+    SiIcons[iconName as keyof typeof SiIcons] ||
+    GrIcons[iconName as keyof typeof GrIcons] ||
+    FaIcons.FaDatabase // Default icon if not found
   );
 };
 
 const SectionContent: React.FC<SectionContentProps> = ({ section }) => {
-  // Renderiza experiencia laboral o estudios
+  // Render work or study experience
   const renderExperience = (experience: WorkExperience | StudyExperience, index: number) => (
     <div key={index} className="mb-6">
       <div className="flex flex-col md:flex-row justify-between">
@@ -44,7 +44,7 @@ const SectionContent: React.FC<SectionContentProps> = ({ section }) => {
     </div>
   );
 
-  // Renderiza el contenido según el tipo de sección
+  // Render content based on section type
   const renderContent = () => {
     switch (section.type) {
       case "intro":
@@ -61,12 +61,12 @@ const SectionContent: React.FC<SectionContentProps> = ({ section }) => {
               return (
                 <div key={index} className="flex flex-col items-center text-center">
                   {skill.links && skill.links.length > 0 ? (
-                    <a 
-                      href={skill.links[0]} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      title={skill.name} 
-                      aria-label={skill.name} 
+                    <a
+                      href={skill.links[0]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={skill.name}
+                      aria-label={skill.name}
                       role="img"
                     >
                       <IconComponent className="w-10 h-10 text-gray-400 hover:text-pink-500" />
