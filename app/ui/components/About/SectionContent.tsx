@@ -10,13 +10,18 @@ interface SectionContentProps {
 }
 
 // Function to dynamically get the corresponding icon
-const getIconComponent = (iconName: keyof typeof FaIcons | keyof typeof SiIcons | keyof typeof GrIcons) => {
-  return (
-    FaIcons[iconName as keyof typeof FaIcons] ||
-    SiIcons[iconName as keyof typeof SiIcons] ||
-    GrIcons[iconName as keyof typeof GrIcons] ||
-    FaIcons.FaDatabase // Default icon if not found
-  );
+const getIconComponent = (iconName: string | undefined) => {
+  if (iconName && (FaIcons[iconName as keyof typeof FaIcons] || SiIcons[iconName as keyof typeof SiIcons] || GrIcons[iconName as keyof typeof GrIcons])) {
+    return (
+      FaIcons[iconName as keyof typeof FaIcons] ||
+      SiIcons[iconName as keyof typeof SiIcons] ||
+      GrIcons[iconName as keyof typeof GrIcons] ||
+      FaIcons.FaDatabase
+    );
+  }
+  
+  // Return a default icon if not valid
+  return FaIcons.FaDatabase;
 };
 
 const SectionContent: React.FC<SectionContentProps> = ({ section }) => {
