@@ -1,10 +1,9 @@
 "use client";
 
 import { sections } from "@/data";
-import IntroCard from "../ui/components/About/IntroCard";
 import { LiaPlaySolid } from "react-icons/lia";
 import { motion } from "framer-motion";
-import SectionContent from "../ui/components/About/SectionContent"; // Asegúrate de importar el nuevo componente
+import SectionContent from "../ui/components/About/SectionContent";
 
 export default function About() {
   return (
