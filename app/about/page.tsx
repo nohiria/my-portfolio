@@ -2,8 +2,9 @@
 
 import { sections } from "@/data";
 import IntroCard from "../ui/components/About/IntroCard";
-import {LiaPlaySolid } from "react-icons/lia";
+import { LiaPlaySolid } from "react-icons/lia";
 import { motion } from "framer-motion";
+import SectionContent from "../ui/components/About/SectionContent"; // Asegúrate de importar el nuevo componente
 
 export default function About() {
   return (
@@ -36,18 +37,7 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true, amount: 0.2 }}
             >
-              {section.id === "intro" ? (
-                <IntroCard />
-              ) : (
-                <>
-                  <h2 className="text-3xl font-bold text-primary mb-4">
-                    {section.label}
-                  </h2>
-                  <p className="text-gray-300">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tortor nec justo commodo dapibus.
-                  </p>
-                </>
-              )}
+              <SectionContent section={section} />
             </motion.section>
           ))}
         </div>
