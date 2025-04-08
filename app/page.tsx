@@ -61,15 +61,18 @@ export default function Home() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
+            whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+            whileTap={{ scale: 0.95, transition: { duration: 0.2 } }}  
             className="mt-6"
           >
             <a
-              href="/about"
+              href="/portfolio"
               className="
                 relative flex items-center gap-4 px-6 py-4 
-                text-white border-2 border-pink-600 rounded-full 
+                border-2 border-pink-600 rounded-full 
                 bg-transparent hover:bg-pink-500 hover:border-pink-500 
-                transition duration-300 
+                transition duration-300
+                text-white 
                 w-auto
                 [@media_(min-aspect-ratio:1/1)]:w-60
               "
