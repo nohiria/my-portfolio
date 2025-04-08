@@ -93,7 +93,7 @@ export default function ContactPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          Let's connect and explore how we can work together.
+          Let&apos;s connect and explore how we can work together.
         </motion.p>
 
         <motion.form
