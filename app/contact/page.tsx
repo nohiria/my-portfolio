@@ -53,10 +53,12 @@ export default function ContactPage() {
 
       setResult({ type: "success", message: data.message });
       setFormData({ name: "", email: "", message: "" });
-    } catch (error: any) {
-      setResult({ type: "error", message: error.message });
-    } finally {
-      setLoading(false);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setResult({ type: "error", message: error.message });
+      } else {
+        setResult({ type: "error", message: "An unknown error occurred" });
+      }
     }
   };
 
