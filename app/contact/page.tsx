@@ -4,6 +4,12 @@ import { useState } from "react";
 import Script from "next/script";
 import { motion } from "framer-motion";
 
+// Definir una interfaz para el resultado de la respuesta de la API
+interface ApiResponse {
+  message: string;
+  error?: string;
+}
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -39,7 +45,7 @@ export default function ContactPage() {
         body: JSON.stringify({ ...formData, token }),
       });
 
-      const data = await response.json();
+      const data: ApiResponse = await response.json();
 
       if (!response.ok) {
         throw new Error(data.error || "Something went wrong");
@@ -47,8 +53,12 @@ export default function ContactPage() {
 
       setResult({ type: "success", message: data.message });
       setFormData({ name: "", email: "", message: "" });
-    } catch (error: any) {
-      setResult({ type: "error", message: error.message });
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setResult({ type: "error", message: error.message });
+      } else {
+        setResult({ type: "error", message: "An unknown error occurred" });
+      }
     } finally {
       setLoading(false);
     }
