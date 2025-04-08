@@ -4,24 +4,24 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 const projects = [
-  { title: "Edificio Minimalista", category: "Arquitectura", image: "/project1.jpg" },
-  { title: "Skatepark Modular", category: "Surfskate", image: "/project2.jpg" },
-  { title: "Render 3D", category: "Arquitectura", image: "/project3.jpg" },
-  { title: "Skate Bowl Personalizado", category: "Surfskate", image: "/project4.jpg" }
+  { title: "Project 1", category: "Java", image: "/project1.jpg" },
+  { title: "Project 2", category: "PHP", image: "/project2.jpg" },
+  { title: "Project 3", category: "Java", image: "/project3.jpg" },
+  { title: "Project 4", category: "PHP", image: "/project4.jpg" }
 ];
 
 export default function Projects() {
-  const [selectedCategory, setSelectedCategory] = useState("Todos");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredProjects =
-    selectedCategory === "Todos" ? projects : projects.filter(p => p.category === selectedCategory);
+    selectedCategory === "All" ? projects : projects.filter(p => p.category === selectedCategory);
 
   return (
     <section className="py-20 bg-dark text-white">
-      <h2 className="text-4xl text-center font-bold mb-10">Mis Proyectos</h2>
+      <h2 className="text-4xl text-center font-bold mb-10">My Projects</h2>
 
       <div className="flex justify-center space-x-4 mb-10">
-        {["Todos", "Arquitectura", "Surfskate"].map(category => (
+        {["All", "Java", "PHP"].map(category => (
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
