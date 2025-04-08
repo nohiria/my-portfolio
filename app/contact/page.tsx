@@ -1,17 +1,17 @@
-"use client";
+"use client"
 
 import { useState } from "react";
 import Script from "next/script";
 import { motion } from "framer-motion";
 
-// Definir una interfaz para el resultado de la respuesta de la API
-interface ApiResponse {
+interface FormData {
+  name: string;
+  email: string;
   message: string;
-  error?: string;
 }
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     message: "",
@@ -45,7 +45,7 @@ export default function ContactPage() {
         body: JSON.stringify({ ...formData, token }),
       });
 
-      const data: ApiResponse = await response.json();
+      const data = await response.json();
 
       if (!response.ok) {
         throw new Error(data.error || "Something went wrong");
@@ -53,12 +53,8 @@ export default function ContactPage() {
 
       setResult({ type: "success", message: data.message });
       setFormData({ name: "", email: "", message: "" });
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        setResult({ type: "error", message: error.message });
-      } else {
-        setResult({ type: "error", message: "An unknown error occurred" });
-      }
+    } catch (error: any) {
+      setResult({ type: "error", message: error.message });
     } finally {
       setLoading(false);
     }
@@ -115,7 +111,7 @@ export default function ContactPage() {
                   type={field === "email" ? "email" : "text"}
                   name={field}
                   placeholder={`Your ${field}`}
-                  value={(formData as any)[field]}
+                  value={formData[field as keyof FormData]}
                   onChange={handleChange}
                   required
                   className="w-full border border-gray-600 p-2 rounded"
@@ -161,9 +157,7 @@ export default function ContactPage() {
 
         {result && (
           <motion.p
-            className={`mt-4 text-center ${
-              result.type === "success" ? "text-green-600" : "text-red-600"
-            }`}
+            className={`mt-4 text-center ${result.type === "success" ? "text-green-600" : "text-red-600"}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 1.8 }}
