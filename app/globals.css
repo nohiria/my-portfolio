@@ -33,3 +33,7 @@ body {
   filter: blur(100px);
   z-index: -1000;
 }
+
+.grecaptcha-badge { 
+  visibility: hidden; 
+}
