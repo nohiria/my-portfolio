@@ -24,7 +24,7 @@ export default function Header() {
           <NavLink href="/" icon={<GoHome />} label="" />
           <div className="w-[1px] bg-white/25 hidden sm:inline"></div>
           <NavLink href="/about" icon={<BsPersonCircle />} label="About" />
-          <NavLink href="/portfolio" icon={<LuGrid2X2 />} label="Portfolio" />
+          {/*<NavLink href="/portfolio" icon={<LuGrid2X2 />} label="Portfolio" />*/}
           <NavLink href="/contact" icon={<LuMail />} label="Contact" />
         </div>
 

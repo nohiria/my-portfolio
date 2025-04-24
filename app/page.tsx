@@ -66,7 +66,7 @@ export default function Home() {
             className="mt-6"
           >
             <a
-              href="/portfolio"
+              href="/about"
               className="
                 relative flex items-center gap-4 px-6 py-4 
                 border-2 border-pink-600 rounded-full 
@@ -77,7 +77,7 @@ export default function Home() {
                 [@media_(min-aspect-ratio:1/1)]:w-60
               "
             >
-              SEE PORTFOLIO
+              ABOUT ME
               <CgArrowLongRight size={24} />
             </a>
           </motion.div>
