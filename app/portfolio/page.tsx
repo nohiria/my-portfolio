@@ -3,11 +3,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+const placeholder = "https://placehold.co/600x400?text=No+Image";
+
 const projects = [
   { title: "Project 1", category: "Java", image: "/project1.jpg" },
   { title: "Project 2", category: "PHP", image: "/project2.jpg" },
   { title: "Project 3", category: "Java", image: "/project3.jpg" },
-  { title: "Project 4", category: "PHP", image: "/project4.jpg" }
+  { title: "Project 4", category: "PHP", image: "" }
 ];
 
 export default function Projects() {
@@ -43,7 +45,12 @@ export default function Projects() {
             transition={{ duration: 0.5 }}
             className="relative"
           >
-            <img src={project.image} alt={project.title} className="w-full h-64 object-cover rounded-xl" />
+            <img
+              src={project.image || placeholder}
+              alt={project.title}
+              onError={(e) => (e.currentTarget.src = placeholder)}
+              className="w-full h-64 object-cover rounded-xl"
+            />
             <div className="absolute bottom-0 bg-black/70 text-white p-4 rounded-b-xl">
               <h3 className="text-xl font-semibold">{project.title}</h3>
               <p className="text-sm">{project.category}</p>
