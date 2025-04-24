@@ -2,7 +2,7 @@ import Link from "next/link";
 import { BsPersonCircle } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { GoHome } from "react-icons/go";
-import { LuGrid2X2, LuMail } from "react-icons/lu";
+import { LuMail } from "react-icons/lu";
 import NavLink from "./NavLink";
 
 export default function Header() {
